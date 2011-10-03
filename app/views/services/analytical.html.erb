@@ -1,0 +1,30 @@
+<%= render 'form' %>
+
+<h1>Analytical Services</h1>
+
+<table>
+  <tr>
+  	<th>Name</th>
+    <th>Address</th>
+    <th>Description</th>
+  </tr>
+  
+  <%if @services.length == 0 %>
+  	<h3>"No Services Found"</h3>
+	
+  <%else %>
+  	<% @services.each do |serv| %>
+  			<tr>
+      			<td>
+          			<%=serv.name %>
+      			</td>
+				<td>
+      				<%= serv.address %>
+				</td>
+      			<td>
+          			<%= serv.description %>
+      			</td>
+  			</tr>
+  	<% end %>
+  <% end %>
+</table>

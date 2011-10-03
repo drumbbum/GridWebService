@@ -1,0 +1,46 @@
+
+<h3>Sign up to use caGrid Knowledge Center Query Interface writen in <%= link_to "JRuby on Rails", "http://www.jruby.org/" %></h3>
+
+<h4>You must first <%= link_to "Register with Dorian", "http://portal.training.cagrid.org/web/guest" %> and then sign up using your Dorian Credentials</h4>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>
+  	<i>Select Service</i><br>
+  	<%= collection_select("auth_service_url", nil, AuthServiceUrl.all, :url, :name) %>
+  	</p>
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :firstname %>
+  </p> 
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :lastname %>
+  </p>	
+  <p>
+    <%= f.label :Dorian_username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :Dorian_Password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :Password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  
+
+  
+  <p class="button"><%= f.submit %></p>
+<% end %>

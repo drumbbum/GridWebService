@@ -1,0 +1,48 @@
+<%= form_for(@query) do |f| %>
+  <% if @query.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@query.errors.count, "error") %> prohibited this query from being saved:</h2>
+      <ul>
+      <% @query.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+  <%= hidden_field_tag :endpoint, params[:endpoint] %>
+  <%= hidden_field_tag :obj, @query.object %>
+  
+  <%= radio_button_tag :modifier, "object", true, :onclick => "['DA', 'SA'].each(Element.hide)" %> Object
+  <%= radio_button_tag :modifier, "count", false, :onclick => "['DA', 'SA'].each(Element.hide)" %> Count
+  <%= radio_button_tag :modifier, "distinct_attribute", false, :onchange => "Element.show('DA'); Element.hide('SA');" %> Distict Attribute
+  <%= radio_button_tag :modifier, "selected_attributes", false, :onclick => "Element.show('SA'); Element.hide('DA');" %> Selected Attributes
+  
+  <div id="DA" style="display:none;">
+      <BR>
+      <% for att in @attributes %>
+      <%= radio_button_tag "DA[]", att %>
+      <%= att %>
+      <BR>
+      <% end %>
+  </div>
+  <div id="SA" style="display:none;">
+      <BR>
+      <% for att in @attributes %>
+      <%= check_box_tag "SA[]", att %>
+      <%= att %>
+      <BR>
+      <% end %>
+  </div>
+
+  
+  <br></br>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  	<%= hidden_field_tag :user_id, current_user.id %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

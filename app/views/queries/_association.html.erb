@@ -1,0 +1,8 @@
+<li>
+		<b><%= association.roleName %></br>
+		<%= association.objectName.split('.').last %></br>
+		</b>
+		<% Attribute.find_all_by_cql_object_id(CqlObject.find_by_objectName(association.objectName)).each do |att| %>
+			&gt; <%= link_to h(att.name), :controller => 'queries', :action => 'predicate',:id => params[:id], :endpoint => params[:endpoint], :Object => params[:Object], :association => association.roleName, :attribute => att.name %></br>
+		<% end %>
+</li>

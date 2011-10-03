@@ -1,0 +1,38 @@
+<%= render 'form' %>
+
+<h1>Services containing the phrase "<%= params[:term] %>" </h1>
+
+<%= form_for(@query) do  %>
+<table>
+  <tr>
+  	<th>Name</th>
+    <th>Address</th>
+    <th>Description</th>
+	<th>Query</th>
+  </tr>
+  
+  <%if @services.length == 0 %>
+  	<h3>"No Services Found"</h3>
+	
+  <%else %>
+  	<% @services.each do |serv| %>
+  			<tr>
+      			<td>
+          			<%=serv.name %>
+      			</td>
+				<td>
+      				<%= serv.address %>
+				</td>
+      			<td>
+          			<%= serv.description %>
+      			</td>
+				<td>
+					<% if @dataServices.include?(serv) %>
+						<%= submit_tag 'Query Service', {:name => serv.address} %>
+					<% end %>
+				</td>
+  			</tr>
+  	<% end %>
+  <% end %>
+</table>
+<% end %>

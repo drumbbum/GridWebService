@@ -1,0 +1,39 @@
+<p>
+<b>Query XML - Results</b> <br/>
+</p>
+<p>
+<b>URL</b><br />
+<%= text_field_tag :url, @endpoint, :size => 87, :disabled => true %>
+<%= @url %>
+</p>
+
+<p>
+<b>Query XML</b> <br/>
+<%= text_area_tag 'xml', @xml, :rows => 25, :cols => 75, :disabled => true %>
+</p>
+
+<h2>Results</h2>
+<div id="table.sample">
+	<% unless @rows.empty? %>
+<table>
+  <tr>
+  	<% @rows.at(0).each do |att|%>
+    <th><%= att %></th>
+	<% end %>
+  </tr>
+  
+  	<% @rows.drop(1).each do |row| %>
+	<tr>
+		<%row.each do |value| %>
+			<td> <%= value %> </td>
+		<% end %>
+	</tr>
+	<% end %>
+	
+</table>
+</div>
+<% end %>
+
+<BR>
+<%= link_to 'Back to Queries', queries_path %>
+

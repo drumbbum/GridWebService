@@ -1,0 +1,24 @@
+<%= form_for(@query) do |f|  %>
+
+<h2>Submit A Query via XML</h2>
+<%= link_to "CQL XML Examples", "http://www.cagrid.org/display/dataservices/CQL+Examples" %><br />
+<%= link_to "CQL2 XML Examples", "http://www.cagrid.org/display/dataservices/CQL+2#CQL2-XMLExamples" %>
+
+<p>
+<b>URL</b><br />
+<%= text_field_tag :url, @endpoint, :size => 87 %>
+</p>
+
+<p>
+<b>Query XML</b> <br/>
+<%= text_area_tag 'xml', @xml, :rows => 25, :cols => 75 %>
+</p>
+
+<p>
+	<%= radio_button_tag :version, true, @version %> CQL
+	<%= radio_button_tag :version, false, !@version %> CQL2
+</p>
+
+<%= submit_tag 'Run Query', :name => 'xml_query' %>
+ 
+<% end %>

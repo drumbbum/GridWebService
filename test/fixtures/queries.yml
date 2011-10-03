@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  object: MyString
+  endpoint: MyString
+  modifier: MyString
+  description: MyString
+  user_id: 1
+
+two:
+  object: MyString
+  endpoint: MyString
+  modifier: MyString
+  description: MyString
+  user_id: 1

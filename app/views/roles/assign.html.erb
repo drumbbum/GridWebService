@@ -1,0 +1,22 @@
+<h1>Assign Roles</h1>
+
+<% for @user in @users %>
+<p>
+    <% form_for(@user) do |f| %>
+    <div>
+        <%= @user.username %>
+		<br />
+        <% for role in @roles %>
+        <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+        <%= role.name %>
+        <% end %>
+    </div>
+	<%= submit_tag 'Assign', :name => 'assign_button' %>
+    <% end %>
+</p>
+<p>
+    
+</p>
+<% end %>
+
+<%= link_to 'Back', roles_path %>

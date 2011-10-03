@@ -1,0 +1,46 @@
+
+<p>
+  <b>Service:</b>
+  <%= @query.endpoint %>
+</p>
+
+<p>
+  <b>Object:</b>
+  <%= @query.object %>
+</p>
+
+<p>
+  <b>Modifier:</b>
+  <% for att in @attributes %>
+  <%= att %><BR>
+  <% end %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @query.description %>
+</p>
+
+<p>
+	<b>User:</b>
+	<%= User.find_by_id(@query.user_id).username.capitalize %>
+</p>
+
+<p>
+<%= link_to 'Edit', edit_query_path(@query) %> |
+<%= link_to 'Back', queries_path %> | 
+<%= link_to 'Run Query', result_query_path(@query) %>
+</p>
+
+<p>
+<h3>CQL1 Query XML</h3>
+<textarea cols="80" rows="20" readonly="readonly">
+<%= @cql1Result %>
+</textarea>
+
+<h3>CQL2 Query XML</h3>
+<textarea cols="80" rows="20" readonly="readonly">
+<%= @cql2Result %>
+</textarea>
+</p>
+

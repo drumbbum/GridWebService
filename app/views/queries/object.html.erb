@@ -1,0 +1,23 @@
+<%= form_for(@query) do |f| %>
+
+ <%= hidden_field_tag :endpoint, params[:endpoint] %>
+ 
+ <div class="field">
+    <%= f.label :Service %><br />
+	<b><%=h @service.address %></b>
+  </div>
+  
+  <%= submit_tag 'Change Service', :name => 'change_service_button' %>
+  
+  <br></br>
+  <h2>Select Object from Service</h2>
+  <div class="field">
+    <%= f.label :object %><br />
+    <%= select_tag "Object", options_for_select(@objects, @objects[0]) %>
+  </div>
+  
+  <%= submit_tag 'Select Object', :name => 'object_button' %>
+  
+  <% end %>
+
+<%= link_to 'Back', queries_path %>

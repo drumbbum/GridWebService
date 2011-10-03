@@ -1,0 +1,18 @@
+<h3>Log in using your Dorian Credentials after you've <%= link_to "Signed Up", sign_up_path %> </h3>
+
+<%= form_tag sessions_path do %>
+  <p>
+  	<i>Select Service</i><br>
+  	<%= collection_select("auth_service_url", nil, AuthServiceUrl.all, :url, :name) %>
+  	</p>
+	
+  <p>
+    <%= label_tag :Dorian_username %><br />
+    <%= text_field_tag :username, params[:username] %>
+  </p>
+  <p>
+    <%= label_tag :Dorian_password %><br />
+    <%= password_field_tag :password %>
+  </p>
+  <p class="button"><%= submit_tag "Log in" %></p>
+<% end %>

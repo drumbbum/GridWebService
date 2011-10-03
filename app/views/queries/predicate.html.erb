@@ -1,0 +1,37 @@
+<%= form_for(@query) do |f|  %>
+	<h2>Choose A Predicate</h2>
+
+<div id="highlight">
+    <%= @query.endpoint %>
+</div>
+</br>
+
+<table>
+  <tr>
+    <th>Object</th>
+    <th>Attribute</th>
+    <th>Predicate</th>
+    <th>Value</th>
+  </tr>
+  
+  <tr>
+    <td><%= @query.object.split('.').last %></td>
+    <td><%= @query.term.split(',').last %></td>
+    <td><%= collection_select("predicate_id" ,nil, Predicate.all, :id, :name) %></td>
+    <td> <%= text_field_tag :value, params[:value] %></td>
+  </tr>
+</table>
+
+</br>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+<%= hidden_field(:query, :endpoint)%>
+<%= hidden_field(:query, :object)%>
+<%= hidden_field(:query, :modifier)%>
+<%= hidden_field(:query, :term)%>
+
+<%= submit_tag 'Create Query', :name => 'association_button', :query => params[:query] %>
+<% end %>

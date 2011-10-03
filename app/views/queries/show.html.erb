@@ -1,0 +1,58 @@
+
+<p>
+  <b>Service:</b>
+  <%= @query.endpoint %>
+</p>
+
+<p>
+  <b>Object:</b>
+  <%= @query.object %>
+</p>
+
+<p>
+  <b>Modifier:</b>
+  <%= @query.modifier %> </br>
+</p>
+<p>
+  <b>Modifier Values:</b>
+  <%= @query.term %></br>
+</p>
+
+
+<% if @query.modifier.eql?("association") %>
+	<p>
+		<b>Predicate: </b><%= Predicate.find_by_id(@query.predicate_id).name %> "<%= @query.value %>"
+		
+	</p>
+<% end %>
+
+<p>
+  <b>Description:</b>
+  <%= @query.description %>
+</p>
+
+<p>
+	<b>User:</b>
+	<%= User.find_by_id(@query.user_id).username.capitalize %>
+</p>
+
+<p>
+<%= link_to 'Edit', edit_query_path(@query) %> |
+<%= link_to 'Back', queries_path %> | 
+<%= link_to 'Run Query', result_query_path(@query) %>
+</p>
+
+<p>
+<h3>CQL1 Query XML - 
+<%= link_to("Run CQL XML Query", query_xml_path(:url => @query.endpoint, :xml => @cql1Result, :version => true))%></h3>
+<textarea cols="80" rows="20" readonly="readonly">
+<%= @cql1Result %>
+</textarea>
+
+<h3>CQL2 Query XML - 
+<%= link_to("Run CQL2 XML Query", query_xml_path(:url => @query.endpoint, :xml => @cql2Result, :version => false))%></h3>
+<textarea cols="80" rows="20" readonly="readonly">
+<%= @cql2Result %>
+</textarea>
+</p>
+

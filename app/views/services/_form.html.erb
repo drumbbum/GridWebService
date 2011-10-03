@@ -1,0 +1,20 @@
+<h1>Search For Services</h1>
+<h3>Choose which services you'd like to display or search for services based on a search term. </h3>
+<%= form_tag services_path do %>
+<p>
+    <i>Search All Services</i>
+    <br>
+    <%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Search', :name => 'search_button' %>
+</p>
+<p>
+    <i>See All Analytical Services</i>
+    <br>
+    <%= submit_tag 'Analytical', :name => 'analytical_button' %>
+</p>
+<p>
+    <i>See All Data Services</i>
+    <br>
+    <%= submit_tag 'Data', :name => 'data_button' %>
+</p>
+<% end %>

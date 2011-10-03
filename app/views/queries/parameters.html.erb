@@ -1,0 +1,38 @@
+<%= form_for(@query) do |f|  %>
+
+ <div class="field">
+    <%= f.label :Service %><br />
+	<b><%=h @service.address %></b>
+  </div>
+  
+  <%= submit_tag 'Change Service', :name => 'change_service_button' %>
+  <br></br>
+   <div class="field">
+    <%= f.label :Object %><br />
+	<b><%=h @query.object %></b>
+  </div>
+  
+  <%= submit_tag 'Change Object', :name => 'change_object_button' %>
+  
+  <%= hidden_field_tag :endpoint, params[:endpoint] %>
+  
+  <% end %>
+  
+  </br>
+  <h2>
+  	Add Modifiers or Associations
+  </h2>
+ <p>
+  <%= radio_button_tag :criterion, "Modifier", false, :onclick => "Element.show('mod'); Element.hide('asc');" %> Modifiers
+  <%= radio_button_tag :criterion, "Association", false, :onclick => "Element.show('asc'); Element.hide('mod');" %> Associations
+</p> 
+<div id="mod" style="display:none;">
+<%= render 'form' %>
+</div>
+
+<div id="asc" style="display:none;">
+<ul><%= render :partial => 'association', :collection => Association.find_all_by_cql_object_id(CqlObject.find_by_objectName(params[:Object])) %></ul>
+</div>
+
+
+<%= link_to 'Back', queries_path %>

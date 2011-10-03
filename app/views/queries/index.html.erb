@@ -1,0 +1,45 @@
+<%= link_to 'Create a New Query', new_query_path %></br>
+<%= link_to 'Query via XML', query_xml_path %>
+
+<h1>Listing Queries by Service</h1>
+
+<% @endpoints.each do |endpoint| %>
+  <div id="highlight">
+    <b><%= endpoint %></b>
+</div>
+
+<table>
+  <tr>
+    <th>Object</th>
+    <th>Modifier</th>
+	<th>Attributes</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+	<th></th>
+  </tr>
+  
+
+
+	<% @queries.each do |query| %>
+  <tr>
+  	<% if query.endpoint.eql?(endpoint) %>
+    <td><%= query.object %></td>
+	<td><%= query.modifier %></td>
+    <td><% unless query.term.nil? %>
+			<%= query.term %>
+		<% end %></td>
+    <td><%= query.description %></td>
+    <td><%= link_to 'Show XML', query %></td>
+    <td><%= link_to 'Edit', edit_query_path(query) %></td>
+    <td><%= link_to 'Destroy', query, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= link_to 'Run Query', result_query_path(query) %></td>
+	
+	<% end %>
+  </tr>
+	<% end %>
+</table>
+<br />
+<% end %>
+

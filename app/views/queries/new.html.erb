@@ -1,0 +1,14 @@
+<h2>Select Service URL</h2>
+
+<%= form_for(@query) do |f| %>
+
+ <div class="field">
+    <%= f.label :Service %><br />
+    <%= f.collection_select :endpoint, @services, :address, :address %>
+  </div>
+  
+  <%= submit_tag 'Select Service', :name => 'service_button' %>
+  
+  <% end %>
+
+<%= link_to 'Back', queries_path %>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loadpath>
+	<pathentry path="" type="src"/>
+	<pathentry path="GEM_LIB/actionpack-3.0.9/lib" type="var"/>
+	<pathentry path="GEM_LIB/rack-1.2.3/lib" type="var"/>
+	<pathentry path="GEM_LIB/actionmailer-3.0.9/lib" type="var"/>
+	<pathentry path="GEM_LIB/activerecord-3.0.7/lib" type="var"/>
+	<pathentry path="GEM_LIB/warbler-0.9.14/lib" type="var"/>
+	<pathentry path="GEM_LIB/railties-3.0.7/lib" type="var"/>
+	<pathentry path="GEM_LIB/rack-mount-0.6.14/lib" type="var"/>
+	<pathentry path="GEM_LIB/activesupport-3.0.9/lib" type="var"/>
+	<pathentry path="GEM_LIB/thin-1.2.11/lib" type="var"/>
+</loadpath>

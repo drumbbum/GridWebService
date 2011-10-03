@@ -1,0 +1,135 @@
+body {
+    background-color: #2e3257;
+    text-align: left;
+    min-height: 468px; /* for ie7*/
+}
+
+#xouter {
+    height: 100%;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+}
+
+#xcontainer {
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+#xinner {
+    width: 90%;
+    background: #fff;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 5px;
+    border: 1px solid #000;
+    padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 1%;
+}
+
+#user_nav {
+	background-color:   #e8e8e8;
+    background-repeat: no-repeat;
+    background-position: left top;
+    text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+
+    max-width: 100%
+}
+
+#logo {
+	background: #e8e8e8 url(../images/caGridKC.gif);
+	line-height: 127px;
+}
+
+#highlight {
+	text-align:center;
+	color: #050500;
+	text-transform:uppercase;
+
+}
+
+#globalnav {
+	position:relative;
+	float:left;
+	width:100%;
+
+	margin:0;
+	list-style:none;
+	line-height:1em;
+}
+
+#globalnav LI {
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+#globalnav A {
+	display:block;
+	color:#444;
+	text-decoration:none;
+	font-weight:bold;
+	background:#ddd;
+	margin:0;
+	padding:0.25em 1em;
+	border-left:1px solid #fff;
+	border-top:1px solid #fff;
+	border-right:1px solid #aaa;
+}
+
+#globalnav A:hover,
+#globalnav A:active,
+#globalnav A.here:link,
+#globalnav A.here:visited {
+	background:#bbb;
+}
+
+#globalnav A.here:link,
+#globalnav A.here:visited {
+	position:relative;
+	z-index:102;
+}
+
+/* TABLES */
+
+table {
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+table th {
+	color:#FFFFFF;
+	border-width: 4px;
+	padding: 4px;
+	border-style: ridge;
+	border-color: gray;
+	background-color: #293258;
+	-moz-border-radius: ;
+}
+table td {
+	border-width: 4px;
+	padding: 4px;
+	border-style: ridge;
+	border-color: gray;
+	background-color: rgb(250, 240, 230);
+	-moz-border-radius: ;
+}
+#footer {
+	color: #CCCCCC;
+	text-align: center;
+}
+
+
+

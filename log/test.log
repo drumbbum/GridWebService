@@ -1,0 +1,192 @@
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 15 14:13:20 -0400 2011
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (287.0ms)
+Completed 200 OK in 323ms (Views: 320.0ms | ActiveRecord: 3.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mQuery Load (1.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "queries"[0m
+  Processing by QueriesController#create as HTML
+  Parameters: {"query"=>{"created_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00, "description"=>"MyString", "endpoint"=>"MyString", "id"=>980190962, "modifier"=>"MyString", "object"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00, "user_id"=>1}}
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "queries"
+  [1m[36mQuery Load (1.0ms)[0m  [1mSELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "queries"
+  Processing by QueriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 20ms
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "queries"[0m
+  [1m[35mQuery Load (1.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  Processing by QueriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  [1m[36mQuery Load (1.0ms)[0m  [1mSELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1[0m
+  Processing by QueriesController#index as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  [1m[35mQuery Load (1.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  Processing by QueriesController#new as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 18ms
+  [1m[36mQuery Load (1.0ms)[0m  [1mSELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1[0m
+  Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 7ms
+  [1m[35mQuery Load (10.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  Processing by QueriesController#update as HTML
+  Parameters: {"query"=>{"created_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00, "description"=>"MyString", "endpoint"=>"MyString", "id"=>980190962, "modifier"=>"MyString", "object"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00, "user_id"=>1}, "id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "roles"
+  Processing by RolesController#create as HTML
+  Parameters: {"role"=>{"created_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00, "description"=>"MyString", "id"=>980190962, "name"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00}}
+Redirected to http://test.host/log_in
+Completed 302 Found in 14ms
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles"[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles"[0m
+  Processing by RolesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 8ms
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "roles"
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  Processing by RolesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 2ms
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1
+  Processing by RolesController#index as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 2ms
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  Processing by RolesController#new as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 2ms
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1
+  Processing by RolesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 9ms
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  Processing by RolesController#update as HTML
+  Parameters: {"role"=>{"created_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00, "description"=>"MyString", "id"=>980190962, "name"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 18:13:48 UTC +00:00}, "id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  Processing by ServicesController#analytical as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 2ms
+  Processing by ServicesController#data as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 32ms
+  Processing by ServicesController#view as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  Processing by SessionsController#new as HTML
+  [1m[35mAuthServiceUrl Load (1.0ms)[0m  SELECT "auth_service_urls".* FROM "auth_service_urls"
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 27.0ms)
+  Processing by UsersController#new as HTML
+  [1m[36mAuthServiceUrl Load (1.0ms)[0m  [1mSELECT "auth_service_urls".* FROM "auth_service_urls"[0m
+Completed 200 OK in 117ms (Views: 113.0ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mQuery Load (1.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "queries"[0m
+  Processing by QueriesController#create as HTML
+  Parameters: {"query"=>{"created_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00, "description"=>"MyString", "endpoint"=>"MyString", "id"=>980190962, "modifier"=>"MyString", "object"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00, "user_id"=>1}}
+Redirected to http://test.host/log_in
+Completed 302 Found in 4ms
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "queries"
+  [1m[36mQuery Load (0.0ms)[0m  [1mSELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "queries"
+  Processing by QueriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "queries"[0m
+  [1m[35mQuery Load (1.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  Processing by QueriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 4ms
+  [1m[36mQuery Load (1.0ms)[0m  [1mSELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1[0m
+  Processing by QueriesController#index as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 4ms
+  [1m[35mQuery Load (1.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  Processing by QueriesController#new as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 16ms
+  [1m[36mQuery Load (1.0ms)[0m  [1mSELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1[0m
+  Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 5ms
+  [1m[35mQuery Load (7.0ms)[0m  SELECT "queries".* FROM "queries" WHERE "queries"."id" = 980190962 LIMIT 1
+  Processing by QueriesController#update as HTML
+  Parameters: {"query"=>{"created_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00, "description"=>"MyString", "endpoint"=>"MyString", "id"=>980190962, "modifier"=>"MyString", "object"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00, "user_id"=>1}, "id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "roles"
+  Processing by RolesController#create as HTML
+  Parameters: {"role"=>{"created_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00, "description"=>"MyString", "id"=>980190962, "name"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00}}
+Redirected to http://test.host/log_in
+Completed 302 Found in 15ms
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "roles"[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles"[0m
+  Processing by RolesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 9ms
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "roles"
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  Processing by RolesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1
+  Processing by RolesController#index as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 2ms
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  Processing by RolesController#new as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 2ms
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1
+  Processing by RolesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 7ms
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 980190962 LIMIT 1[0m
+  Processing by RolesController#update as HTML
+  Parameters: {"role"=>{"created_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00, "description"=>"MyString", "id"=>980190962, "name"=>"MyString", "updated_at"=>Fri, 15 Jul 2011 19:27:41 UTC +00:00}, "id"=>"980190962"}
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  Processing by ServicesController#analytical as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 1ms
+  Processing by ServicesController#data as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 29ms
+  Processing by ServicesController#view as HTML
+Redirected to http://test.host/log_in
+Completed 302 Found in 3ms
+  Processing by SessionsController#new as HTML
+  [1m[35mAuthServiceUrl Load (0.0ms)[0m  SELECT "auth_service_urls".* FROM "auth_service_urls"
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 18.0ms)
+  Processing by UsersController#new as HTML
+  [1m[36mAuthServiceUrl Load (1.0ms)[0m  [1mSELECT "auth_service_urls".* FROM "auth_service_urls"[0m
+Completed 200 OK in 128ms (Views: 124.0ms | ActiveRecord: 1.0ms)

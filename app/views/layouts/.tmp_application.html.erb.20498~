@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GridClient</title>
+        <%= stylesheet_link_tag :all %>
+        <%= javascript_include_tag :defaults %>
+        <%= csrf_meta_tag %>
+    </head>
+    <body>
+    	<div id="xouter">
+            <div id="xcontainer">
+        		<div id="user_nav">
+        			<div id=globalnav>
+						<li><%= link_to(image_tag("caGridKC.gif"), log_in_path) %></li>
+					</div>
+            		<% if current_user %>
+            			Logged in as <b><%= current_user.username.capitalize %></b>. Not you? <%= link_to "Log out", log_out_path %>
+            		<% else %>
+            			<%= link_to "Sign Up", sign_up_path %>, <%= link_to "Log In", log_in_path %> or <%= link_to "Register with Dorian", "http://portal.training.cagrid.org/web/guest" %>
+            		<% end %>
+				</div>
+				
+				<div id=xinner>
+					<div id=globalnav>			
+						<li><%=link_to "Roles", roles_path %></li>
+						<li><%=link_to "Services", services_view_path %></li>
+						<li><%=link_to "Queries", queries_path %></li>
+					</div>
+					<BR></BR>
+        			
+					<% flash.each do |name, msg| %>
+        			<div id=error_explanation h2>
+        				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+        			</div>
+					
+        			<% end %>
+		
+        			<%= yield %>
+				</div>
+			</div>
+		</div>
+    </body>
+	<div id="footer">
+		Created by: Mark Vance</br>
+		caGrid Knowledge Center</br>
+	    July 13, 2011
+	</div>
+</html>

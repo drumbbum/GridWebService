@@ -1,0 +1,54 @@
+<p>
+  <b>Service:</b>
+  <%= @query.endpoint %>
+</p>
+
+<p>
+  <b>Object:</b>
+  <%= @query.object %>
+</p>
+
+<p>
+  <b>Modifier:</b>
+  <%= @query.modifier %> </br>
+</p>
+<p>
+  <b>Modifier Values:</b>
+  <%= @query.term %></br>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @query.description %>
+</p>
+
+<p>
+	<b>User:</b>
+	<%= User.find_by_id(@query.user_id).username.capitalize %>
+</p>
+
+
+<h2>Results</h2>
+<% unless @rows.empty? %>
+<div id="table.sample">
+<table>
+  <tr>
+  	<% @rows.at(0).each do |att|%>
+    <th><%= att %></th>
+	<% end %>
+  </tr>
+  
+  	<% @rows.drop(1).each do |row| %>
+	<tr>
+		<%row.each do |value| %>
+			<td> <%= value %> </td>
+		<% end %>
+	</tr>
+	<% end %>
+	
+</table>
+</div>
+<% end %>
+<BR>
+
+<%= link_to 'Back to Queries', queries_path %>
