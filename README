@@ -1,0 +1,42 @@
+To get GridWebService running from scratch:
+
+export JAVA_HOME=/usr/java/jdk1.6.0_18
+
+Install caGrid 'wget https://gforge.nci.nih.gov/frs/download.php/9282/caGrid-installer-1.4.zip'
+Install JRuby 'wget http://jruby.org.s3.amazonaws.com/downloads/1.6.3/jruby-bin-1.6.3.zip'
+
+Set environment variables for:
+
+export GLOBUS_LOCATION="/home/jruby/ext/ws-core-4.0.3"
+export ANT_HOME="/home/jruby/ext/apache-ant-1.7.0"
+export JRUBY_HOME="/home/jruby/ext/jruby-1.6.3"
+export JBOSS_HOME="/home/jruby/ext/jboss-4.0.5.GA"
+export CATALINA_HOME="/home/jruby/ext/apache-tomcat-5.5.27"
+export CONTAINER_LIB="/home/jruby/ext/container_lib"
+
+set PATH:
+PATH=$JAVA_HOME/bin:$PATH:$HOME/bin:$ANT_HOME/bin:$JRUBY_HOME/bin:$JRUBY_HOME/lib/ruby/gems/1.8/gems/*/bin
+
+Install Rails:
+gem install rails
+
+Install gems:
+GridWebService %> bundle install
+(may have to install warbler separately 'gem install warbler')
+
+migrate database
+GridWebService %> rake db:migrate
+
+populate database
+GridWebService %> rake populate:all
+
+deploy to Tomcat or JBoss (respectively)
+GridWebService %> ant deployTomcat
+GridWebService %> ant deployJBoss
+
+Start container:
+$CATALINA_HOME/bin/.startup.sh
+$JBOSS_HOME/bin/.run.sh
+
+
+
